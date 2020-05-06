@@ -4,6 +4,7 @@ Aufgabenblatt 1, Aufgabe 5
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
 from skimage.io import imread
 import time
 
@@ -11,17 +12,22 @@ import time
 mandrill = imread("./mandrill.png")
 
 def loop(img):
+    tmp = img.copy()
     for y in range(img.shape[0]):
         for x in range(img.shape[1]):
             if img[y, x] > 99 and img[y, x] < 200:
-                pass
+                tmp[y, x] = 1
+            else:
+                tmp[y, x] = 0
+    return tmp
 
 #2.
 def broadcast(img):
     a = img > 99
     b = img < 200
-    #c = a * b       #Zusammenfügen beider Arrays, für >99 UND <200
-    
+    c = a * b       #Zusammenfügen beider Arrays, für >99 UND <200
+    return c
+
 #3.
 def timeDiff(img):
     startLoop = time.time()
@@ -38,7 +44,7 @@ def timeDiff(img):
     print("Zeitdifferenz: " + str((endLoop - startLoop) - (endBroadcast - startBroacast)))
 
 """
-Zeit mit Schleifen: 67.02881479263306
-Zeit mit Broadcast: 0.030027151107788086
-Zeitdifferenz: 66.99878764152527
+Zeit mit Schleifen: 70.58616399765015
+Zeit mit Broadcast: 0.003213644027709961
+Zeitdifferenz: 70.58295035362244
 """
