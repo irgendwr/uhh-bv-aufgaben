@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Aufgabenblatt 2, Aufgabe 1
+Aufgabenblatt 2, Aufgabe 2
 """
 
 import numpy as np
@@ -11,7 +11,7 @@ import math
 mu = 0      #µ
 sigma = 1   #σ
 
-# Gauss-Funktion
+# Gauss-Funktion, Laufzeitoptimierung wurde zu gunsten der Lesbarkeit ignoriert
 def gauss(x):
     x = x/(50/10) - 5   # Umkonvertierung der Spalten 0 bis 50 in den Definitionsbereich von -5 bis 5
     fx = (1/math.sqrt(2 * math.pi * (sigma**2))) * math.exp(-(((x - mu)**2)/2 * (sigma**2)))    #Gauss-Funktion
