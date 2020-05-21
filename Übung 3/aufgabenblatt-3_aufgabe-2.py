@@ -6,13 +6,16 @@ Aufgabenblatt 3, Aufgabe 2
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
+# from skimage.color import rgb2gray
 
 #1.
-image1 = imread("./bild1.png").astype(np.float)
-image2 = imread("./bild2.png").astype(np.float)
-image3 = imread("./bild3.png").astype(np.float)
-image4 = imread("./bild4.png").astype(np.float)
-image5 = imread("./bild5.png").astype(np.float)
+prefix = "serienbild2/bild"
+appendix = ".png"
+image1 = imread(prefix+"1"+appendix).astype(np.float)
+image2 = imread(prefix+"2"+appendix).astype(np.float)
+image3 = imread(prefix+"3"+appendix).astype(np.float)
+image4 = imread(prefix+"4"+appendix).astype(np.float)
+image5 = imread(prefix+"5"+appendix).astype(np.float)
 
 background1 = (image1 + image2 + image3 + image4 + image5)/5
 plt.imshow(background1, cmap="Greys_r")
@@ -37,23 +40,23 @@ for y in range(background2.shape[0]):
 # plt.imshow(background2, cmap="Greys_r")
 
 #3.
-threshold = 17  # Testweise guter Wert
+# threshold = 17  # Testweise guter Wert für gegebene Bilder
+threshold = 60  # Testweise guter Wert für eigene Bilder
 
-image1Ball = abs(image1 - background2) > threshold
-image2Ball = abs(image2 - background2) > threshold
-image3Ball = abs(image3 - background2) > threshold
-image4Ball = abs(image4 - background2) > threshold
-image5Ball = abs(image5 - background2) > threshold
-plt.imshow(image5Ball, cmap="Greys_r")
+image1obj = abs(image1 - background2) > threshold
+image2obj = abs(image2 - background2) > threshold
+image3obj = abs(image3 - background2) > threshold
+image4obj = abs(image4 - background2) > threshold
+image5obj = abs(image5 - background2) > threshold
 
 #4.
-background3 = np.copy(background2)
-background3 = np.where(image1Ball, image1 * image1Ball, background3)
-background3 = np.where(image2Ball, image2 * image2Ball, background3)
-background3 = np.where(image3Ball, image3 * image3Ball, background3)
-background3 = np.where(image4Ball, image4 * image4Ball, background3)
-background3 = np.where(image5Ball, image5 * image5Ball, background3).astype(np.uint8)
-plt.imshow(background3, cmap="Greys_r")
+serienbild = np.copy(background2)
+serienbild = np.where(image1obj, image1 * image1obj, serienbild)
+serienbild = np.where(image2obj, image2 * image2obj, serienbild)
+serienbild = np.where(image3obj, image3 * image3obj, serienbild)
+serienbild = np.where(image4obj, image4 * image4obj, serienbild)
+serienbild = np.where(image5obj, image5 * image5obj, serienbild).astype(np.uint8)
+plt.imshow(serienbild, cmap="Greys_r")
 
 #5.
-plt.imsave("./bild6.png", background3, cmap="Greys_r")
+plt.imsave("./serienbild.png", serienbild, cmap="Greys_r")
