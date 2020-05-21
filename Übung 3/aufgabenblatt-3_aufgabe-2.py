@@ -9,7 +9,7 @@ from skimage.io import imread
 # from skimage.color import rgb2gray
 
 #1.
-prefix = "serienbild2/bild"
+prefix = "serienbild3/bild"
 appendix = ".png"
 image1 = imread(prefix+"1"+appendix).astype(np.float)
 image2 = imread(prefix+"2"+appendix).astype(np.float)
@@ -40,8 +40,9 @@ for y in range(background2.shape[0]):
 # plt.imshow(background2, cmap="Greys_r")
 
 #3.
-# threshold = 17  # Testweise guter Wert für gegebene Bilder
-threshold = 60  # Testweise guter Wert für eigene Bilder
+# threshold = 17  # Testweise guter Wert für gegebene Bilder (#1)
+# threshold = 60  # Testweise guter Wert für eigene Bilder (#2)
+threshold = 6  # Testweise guter Wert für eigene Bilder (#3)
 
 image1obj = abs(image1 - background2) > threshold
 image2obj = abs(image2 - background2) > threshold
