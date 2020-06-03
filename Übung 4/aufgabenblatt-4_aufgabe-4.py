@@ -6,7 +6,7 @@ Aufgabenblatt 4, Aufgabe 4
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
-import math
+import itertools
 
 image = imread("./tv.png").astype(np.float)
 
