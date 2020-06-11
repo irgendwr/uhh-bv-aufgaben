@@ -10,9 +10,9 @@ Finn Jebsen, Jonas Bögle und Maik Simke
 
    a) Helles rosa: Jeder Farbkanal ist relativ hoch, weshalb die Farbe insgesamt hell ist. Da Grün und Blau gleich hoch sind, Rot aber höher, wird die Farbe einen leichten Rotstich haben, folglich ein helles rosa.
 
-   b) Ungesättigtes blau-türkis. Die Farbe besitzt einen sehr starken Blauanteil und einen schwächeren Grünanteil, weshalb die Farbton türkis mit stärkerer Tendenz zu blau ist. Der geringe Rotanteil macht die Farbe nur ein wenig heller, ohne den Farbton groß zu beeinflussen, weshalb sie ungesättigter aussieht.
+   b) Gesättigtes blau-türkis. Die Farbe besitzt einen sehr starken Blauanteil und einen schwächeren Grünanteil, weshalb der Farbton türkis mit stärkerer Tendenz zu blau ist. Der geringe Rot-Anteil im Vergleich zum hohen Blau-Anteil sorgt für eine hohe Saturation, folglich ist die Farbe ein gesättigtes blau-türkis.
 
-   c) Dunkelrot. Die Magenta- und Gelb-Anteile erzeugen zusammen ein relativ ungesättigtes rot. Da CMY ein subtraktives Farbmodell ist, wird durch das hinzufügen von Cyan die Farbe insgesamt dunkler, ohne den Farbton zu ändern.
+   c) Dunkles Terrakotta. Die Magenta- und Gelb-Anteile erzeugen zusammen ein relativ ungesättigtes rot. Da CMY ein subtraktives Farbmodell ist, wird durch das hinzufügen von Cyan die Farbe insgesamt dunkler, ohne den Farbton zu ändern.
 
    
 
