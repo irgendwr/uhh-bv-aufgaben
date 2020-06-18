@@ -4,7 +4,7 @@ Finn Jebsen, Jonas Bögle und Maik Simke
 
 ## Aufgabenblatt 6
 
-### Aufgabe 2
+### Aufgabe 3
 
 $$
 \sigma^2 = \frac{1}{N_{cols}N_{rows}} \sum_{x = 1}^{N_{cols}} \sum_{y = 1}^{N_{rows}}[I(x, y) - \mu_I]^2 \Rightarrow\\~\\~\\
