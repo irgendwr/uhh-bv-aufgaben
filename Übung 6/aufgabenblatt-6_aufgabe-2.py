@@ -35,9 +35,9 @@ def variance2(img):
     for y3 in range(img.shape[0]):
         for x3 in range(img.shape[1]):
             mean2 += img[y3, x3]
-            variance2 += (img[y3, x3])**2
+            variance2 += (img[y3, x3])**2                                       # Does the fucky wucky sometimes... idk why tho
     mean2 = mean2 / (img.shape[0] * img.shape[1])
-    variance2 = variance2 / (img.shape[0] * img.shape[1]) - mean2**2            # Does the fucky wucky sometimes... idk why tho
+    variance2 = variance2 / (img.shape[0] * img.shape[1]) - mean2**2
     
     return variance2
 

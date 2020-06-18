@@ -36,7 +36,7 @@ plt.imshow(moonEqual, cmap="Greys_r", vmin=0, vmax=255)
 plt.show()
 
 #2. und 3.
-tileSize = 2 # Größe der Kacheln
+tileSize = 64 # Größe der Kacheln
 moonTileEqual = np.copy(moon)
 
 for y in range(int(moonTileEqual.shape[0]/tileSize)):
