@@ -32,3 +32,15 @@ Gefaltetes Bild| 14/3  32/3  34/3  26/3  8/3 |, mit Mittelwert (114/3) / 5 = 7.6
 
 
 
+3.
+
+$f$ = | 4  6  2  7  1 |, mit zero-padding 0 | 4  6  2  7  1 | 0
+
+$k$ = | 0  2  1|
+
+$k ☆ f$ = | 14  14  11 15  2 | $\cdot \frac13$
+
+$f ☆ k$ = | 15  11  14 | $\cdot \frac1{20}$
+
+$k ☆ f$ = | 14  14  11 15  2 | $\cdot \frac13$ $\neq$ | 15  11  14 | $\cdot \frac1{20}$ = $f ☆ k$
+
