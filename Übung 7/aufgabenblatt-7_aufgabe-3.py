@@ -35,7 +35,7 @@ beträgt ungefähr 0.0725
 
 #3.
 def boxFilter(img, kernelSize):
-    kernel = np.full((kernelSize, kernelSize), 1/kernelSize)
+    kernel = np.full((kernelSize, kernelSize), 1/kernelSize**2)
     imgConv = scipy.ndimage.convolve(img, kernel)
     
     return imgConv
@@ -53,14 +53,12 @@ plt.imshow(boxFilter(einsteinNoise, (np.argmin(test1)*2)+3), cmap="Greys_r")
 
 """
 Die geringste mittlere Differenz wird durch einen 3x3 Filterkern erzeugt.
-Dabei ist die mittlere Differenz aber immer noch höher, als bei einen ungefalteten Bild.
 """
 
 #4.
 def gaussFilter(img, var):
-    imgGauss = scipy.ndimage.gaussian_filter(img, var)
     
-    return imgGauss
+    return scipy.ndimage.gaussian_filter(img, var)
 
 # Testen, weche Varianz die geringste Differenz erzeugt.
 test2 = []
@@ -75,7 +73,7 @@ plt.imshow(gaussFilter(einsteinNoise, (np.argmin(test2) + 1)/10), cmap="Greys_r"
 
 """
 Die geringste mittlere Differenz wird durch eine Varianz von 1 erzeugt.
-Die mittlere Differenz von Gauss-Filter ist geringer, als die des Box-Filters.
+Die mittlere Differenz von Gauss-Filter ist ungefähr gleich der des Box-Filters.
 Es lässt sich kein wirklicher Unterschied zwischen dem Box-Filter und dem Gauss-Filter erkennen.
 """
 
