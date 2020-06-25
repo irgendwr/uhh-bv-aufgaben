@@ -20,9 +20,9 @@ def convolve(img):
     imgConv = []
     for x in range(len(img) - 4):
         wsum = 0
-        shift = -2
+        shift = 0
         for w in kernel:
-            wsum += (img[(x + 2) - shift]) * w
+            wsum += (img[x + shift]) * w
             shift += 1
         imgConv.append(wsum)
     
