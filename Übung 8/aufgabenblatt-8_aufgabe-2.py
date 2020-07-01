@@ -82,8 +82,8 @@ Die Ableitungskurven werden glatter, kleiner und vorallem weniger sparodisch in 
 """
 
 #4.
-mandrillGradientOrientation = np.rad2deg(np.arctan(skimage.filters.sobel_h(mandrill)/skimage.filters.sobel_v(mandrill)))
-mandrillGaussGradientOrientation = np.rad2deg(np.arctan(skimage.filters.sobel_h(mandrillGauss)/skimage.filters.sobel_v(mandrillGauss)))
+mandrillGradientOrientation = np.rad2deg(np.arctan(skimage.filters.sobel_v(mandrill)/skimage.filters.sobel_h(mandrill)))
+mandrillGaussGradientOrientation = np.rad2deg(np.arctan(skimage.filters.sobel_v(mandrillGauss)/skimage.filters.sobel_h(mandrillGauss)))
 
 mandrillGradientOrientationHist = np.histogram(mandrillGradientOrientation, bins=9, range=(-90,90), density=True)
 mandrillGaussGradientOrientationHist = np.histogram(mandrillGaussGradientOrientation, bins=9, range=(-90,90), density=True)
@@ -99,11 +99,12 @@ plt.figure(12)
 plt.hist(mandrillGaussGradientOrientation.flatten(), bins=9, range=(-90,90), density=True, weights=mandrillGaussGradient.flatten())
 
 """
-Beim normalen Bild liegen die meisten Orientationen bei entweder -90 bis -75 oder 75 bis 90 Grad.
-Beim weichgezeichneten Bild liegen die meisten Orientationen zwischen -25 und 25 Grad.
+Beim normalen Bild liegen die meisten Orientationen zwischen -25 und 25 Grad.
+Beim weichgezeichneten Bild liegen die meisten Orientationen bei entweder -90 bis -75, 75 bis 90, oder um 0 Grad.
+Dies bedeutet, dass beim weichgezeichneten Bild überwiegend keine Kanten, oder starke Kanten
+existieren, aber weniger "schwache" Kanten.
 
 Wenn "weights" auf die Gradientenstärke gesetzt wird, verstärken sich die Trends im Histogramm, also
-sind beim normalen Bild deutlich mehr Orientationen bei entweder -90 bis -75 oder 75 bis 90 Grad und
-beim weichgezeichneten Bild liegen die meisten Orientationen zwischen -25 und 25 Grad mit zwei neuen
-Peaks bei .90 bis -75 und 75 bis 90 Grad.
+sind beim normalen Bild deutlich mehr Orientationen im Bereich zwischen -25 und 25 Grad und
+beim weichgezeichneten Bild noch mehr bei entweder -90 bis -75, 75 bis 90, oder um 0 Grad.
 """
