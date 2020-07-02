@@ -99,12 +99,12 @@ plt.figure(12)
 plt.hist(mandrillGaussGradientOrientation.flatten(), bins=9, range=(-90,90), density=True, weights=mandrillGaussGradient.flatten())
 
 """
-Beim normalen Bild liegen die meisten Orientationen zwischen -25 und 25 Grad.
-Beim weichgezeichneten Bild liegen die meisten Orientationen bei entweder -90 bis -75, 75 bis 90, oder um 0 Grad.
+Beim normalen Bild liegen die meisten Orientationen zwischen -20 und 20 Grad.
+Beim weichgezeichneten Bild liegen die meisten Orientationen bei entweder -90 bis -70, 70 bis 90, oder um 0 Grad.
 Dies bedeutet, dass beim weichgezeichneten Bild überwiegend keine Kanten, oder starke Kanten
 existieren, aber weniger "schwache" Kanten.
 
 Wenn "weights" auf die Gradientenstärke gesetzt wird, verstärken sich die Trends im Histogramm, also
-sind beim normalen Bild deutlich mehr Orientationen im Bereich zwischen -25 und 25 Grad und
-beim weichgezeichneten Bild noch mehr bei entweder -90 bis -75, 75 bis 90, oder um 0 Grad.
+sind beim normalen Bild deutlich mehr Orientationen im Bereich zwischen -20 und 20 Grad und
+beim weichgezeichneten Bild noch mehr bei entweder -90 bis -70, 70 bis 90, oder um 0 Grad.
 """
