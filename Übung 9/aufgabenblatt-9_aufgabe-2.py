@@ -84,6 +84,7 @@ Es gelingt die wichtigsten Kanten zu erkennen, wobei das Ergebnis noch nicht opt
 Eine Varianz von 6 mit einen Threshod von 0.0006 bietet gute Ergebnisse.
 """
 
+#5.
 mandrillSobel = skimage.filters.sobel(mandrillGauss) > 0.016    # Sobel auf weichgezeichnete Version
 #mandrillSobel = skimage.filters.sobel(mandrill) > 0.15          # Sobel auf normale Version
 
